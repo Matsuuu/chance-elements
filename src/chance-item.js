@@ -15,7 +15,7 @@ export class ChanceItem extends LitElement {
 
     render() {
         return html`
-            <span>${this.value}</span>
+            <span part="value">${this.value}</span>
         `
     }
 

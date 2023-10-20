@@ -1,11 +1,12 @@
-/**
- * @param {HTMLSlotElement} slot
- */
-export function initializeChanceItems(slot) {
-    const items = slot.assignedElements();
+import { html } from "lit";
 
-    items.forEach((/** @type {HTMLElement} */ item, i) => {
-        item.setAttribute('index', i.toString());
-        item.style.setProperty('--item-index', i.toString());
+/**
+ * @param {import("./types").ChanceItemEntry[]} items
+ */
+export function initializeChanceItems(items) {
+    return items.map((item, i) => {
+        return html`
+            <chance-item .value=${item.value} index=${i} style="--item-index: ${i}"></chance-item>
+        `
     });
 }
