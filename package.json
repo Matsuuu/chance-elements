@@ -1,0 +1,20 @@
+{
+  "name": "chance-elements",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm run start:no-resolve -- --node-resolve",
+    "start:no-resolve": "web-dev-server --open --watch --app-index index.html"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@web/dev-server": "^0.3.6"
+  },
+  "dependencies": {
+    "debug-bubble": "^1.1.0",
+    "lit": "^3.0.0"
+  }
+}
