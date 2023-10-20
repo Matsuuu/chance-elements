@@ -1,4 +1,4 @@
-import { html } from "lit";
+import { html } from 'lit';
 
 /**
  * @param {import("./types").ChanceItemEntry[]} items
@@ -6,7 +6,11 @@ import { html } from "lit";
 export function initializeChanceItems(items) {
     return items.map((item, i) => {
         return html`
-            <chance-item .value=${item.value} index=${i} style="--item-index: ${i}"></chance-item>
-        `
+            <chance-item
+                .value=${item.value}
+                index=${i}
+                style="--item-index: ${i}; --item-total: ${items.length}"
+            ></chance-item>
+        `;
     });
 }

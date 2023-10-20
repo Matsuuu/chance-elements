@@ -34,11 +34,10 @@ export class ChanceWheel extends LitElement {
 
         .dial {
             display: flex;
-            position: absolute;
-            height: 0;
-            inset: 0;
+            position: relative;
+            height: 100%;
+            width: 100%;
             margin: auto;
-            top: -10%;
         }
 
         .dial::after {
@@ -54,20 +53,25 @@ export class ChanceWheel extends LitElement {
         chance-item {
             position: absolute;
             right: 0;
+            top: 0;
+            bottom: 0;
             margin: auto;
             width: 50%;
-            transform: rotate(calc(30deg * var(--item-index)));
+            transform: rotate(calc(360deg - (360deg / var(--item-total) * var(--item-index))));
             transform-origin: left center;
             display: flex;
             justify-content: flex-end;
+            clip-path: polygon(0 50%, 100% 0, 100% 100%, 0 50%);
+            height: calc(320% / var(--item-total));
         }
 
         chance-item::part(value) {
             background: rgba(0, 0, 120, 0.2);
             padding: 1rem;
             width: 75%;
-            display: block;
-            text-align: right;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
         }
 
     `;
