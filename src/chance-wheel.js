@@ -24,12 +24,15 @@ export class ChanceWheel extends LitElement {
 
     static styles = css`
         :host {
+            overflow: hidden;
+            border-radius: 50%;
             display: flex;
             justify-content: center;
             align-items: center;
             background: #fafafa;
             aspect-ratio: 1;
             position: relative;
+            --pi: 3.14159265358979;
         }
 
         .dial {
@@ -62,16 +65,17 @@ export class ChanceWheel extends LitElement {
             display: flex;
             justify-content: flex-end;
             clip-path: polygon(0 50%, 100% 0, 100% 100%, 0 50%);
-            height: calc(320% / var(--item-total));
+            height: calc(var(--pi) * 51cqh / var(--item-total));
         }
 
         chance-item::part(value) {
             background: rgba(0, 0, 120, 0.2);
-            padding: 1rem;
+            padding: 0 10% 0 2%;
             width: 75%;
             display: flex;
             justify-content: flex-end;
             align-items: center;
+            border-radius: 5%;
         }
 
     `;

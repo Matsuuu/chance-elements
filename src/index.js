@@ -21,6 +21,12 @@ render(
     html`
         <chance-wheel .items=${items}>
         </chance-wheel>
+        <chance-wheel .items=${items.slice(0, 9)}>
+        </chance-wheel>
+        <chance-wheel .items=${items.slice(0, 6)}>
+        </chance-wheel>
+        <chance-wheel .items=${items.slice(0, 3)}>
+        </chance-wheel>
     `,
     document.body,
 );
