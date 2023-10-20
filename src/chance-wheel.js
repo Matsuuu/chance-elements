@@ -65,7 +65,7 @@ export class ChanceWheel extends LitElement {
             display: flex;
             justify-content: flex-end;
             clip-path: polygon(0 50%, 100% 0, 100% 100%, 0 50%);
-            height: calc(var(--pi) * 51cqh / var(--item-total));
+            height: calc(330% / var(--item-total));
         }
 
         chance-item::part(value) {
